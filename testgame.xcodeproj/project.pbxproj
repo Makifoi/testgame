@@ -48,6 +48,7 @@
 				6EEEE9E822A014F700B99FBA /* Products */,
 			);
 			sourceTree = "<group>";
+			usesTabs = 1;
 		};
 		6EEEE9E822A014F700B99FBA /* Products */ = {
 			isa = PBXGroup;
@@ -99,6 +100,9 @@
 		6EEEE9DF22A014F700B99FBA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				KnownAssetTags = (
+					botton,
+				);
 				LastSwiftUpdateCheck = 1020;
 				LastUpgradeCheck = 1020;
 				ORGANIZATIONNAME = "Yudi Makino";
