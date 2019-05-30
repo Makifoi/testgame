@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6EC80F5922A035740013BFA8 /* Explosion.sks in Resources */ = {isa = PBXBuildFile; fileRef = 6EC80F5822A035740013BFA8 /* Explosion.sks */; };
 		6EEEE9EB22A014F700B99FBA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EEEE9EA22A014F700B99FBA /* AppDelegate.swift */; };
 		6EEEE9ED22A014F700B99FBA /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 6EEEE9EC22A014F700B99FBA /* GameScene.sks */; };
 		6EEEE9EF22A014F700B99FBA /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 6EEEE9EE22A014F700B99FBA /* Actions.sks */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6EC80F5822A035740013BFA8 /* Explosion.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Explosion.sks; sourceTree = "<group>"; };
 		6EEEE9E722A014F700B99FBA /* testgame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = testgame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6EEEE9EA22A014F700B99FBA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6EEEE9EC22A014F700B99FBA /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -65,6 +67,7 @@
 				6EEEE9EC22A014F700B99FBA /* GameScene.sks */,
 				6EEEE9EE22A014F700B99FBA /* Actions.sks */,
 				6EEEE9F022A014F700B99FBA /* GameScene.swift */,
+				6EC80F5822A035740013BFA8 /* Explosion.sks */,
 				6EEEE9F222A014F700B99FBA /* GameViewController.swift */,
 				6EEEE9F422A014F700B99FBA /* Main.storyboard */,
 				6EEEE9F722A014F900B99FBA /* Assets.xcassets */,
@@ -136,6 +139,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6EEEE9F622A014F700B99FBA /* Main.storyboard in Resources */,
+				6EC80F5922A035740013BFA8 /* Explosion.sks in Resources */,
 				6EEEE9ED22A014F700B99FBA /* GameScene.sks in Resources */,
 				6EEEE9F822A014F900B99FBA /* Assets.xcassets in Resources */,
 				6EEEE9FB22A014F900B99FBA /* LaunchScreen.storyboard in Resources */,
