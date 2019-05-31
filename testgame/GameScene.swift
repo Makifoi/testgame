@@ -12,6 +12,8 @@ import CoreMotion
 
 class GameScene: SKScene, SKPhysicsContactDelegate {
 	
+	var gameVC: GameViewController!
+	
 	let motionManager = CMMotionManager()
 	var accelaration: CGFloat = 0.0
 	
@@ -165,6 +167,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
 	func gameOver() {
 		isPaused = true
 		timer?.invalidate()
+		Timer.scheduledTimer(withTimeInterval: 1.0, repeats: false) { _ in
+			self.gameVC.dismiss(animated: true, completion: nil)
+		}
 	}
 	
 }
