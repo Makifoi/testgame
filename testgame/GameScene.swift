@@ -16,6 +16,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
 	var accelaration: CGFloat = 0.0
 	
 	var timer: Timer?
+	var score: Int = 0 {
+		didSet {
+			scoreLabel.text = "Score: \(score)"
+		}
+	}
 	
 	let spaceshipCategory: UInt32 = 0b0001
 	let missileCategory: UInt32 = 0b0010
@@ -25,6 +30,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
 	var earth:  SKSpriteNode!
 	var spaceship: SKSpriteNode!
 	var hearts: [SKSpriteNode] = []
+	var scoreLabel: SKLabelNode!
 	
     override func didMove(to view: SKView) {
 		physicsWorld.gravity = CGVector(dx: 0, dy: 0)
@@ -67,6 +73,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
 			addChild(heart)
 			hearts.append(heart)
 		}
+		
+		scoreLabel = SKLabelNode(text: "Score: 0")
+		scoreLabel.fontName = "Papyrus"
+		scoreLabel.fontSize = 50
+		scoreLabel.position = CGPoint(x: -frame.width / 2 + scoreLabel.frame.width / 2 + 50, y: frame.height / 2 - scoreLabel.frame.height * 5)
+		addChild(scoreLabel)
     }
 	
 	override func didSimulatePhysics() {
@@ -76,6 +88,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
 		self.spaceship.position.x = nextPosition
 	}
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+		if isPaused { return }
 		let missile = SKSpriteNode(imageNamed: "missile")
 		missile.position = CGPoint(x: self.spaceship.position.x, y: self.spaceship.position.y + 50)
 		missile.physicsBody = SKPhysicsBody(circleOfRadius: missile.frame.height / 2)
@@ -131,6 +144,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
 		asteroidNode.removeFromParent()
 		if target.categoryBitMask == missileCategory {
 			targetNode.removeFromParent()
+			score += 5
 			
 		}
 		
@@ -142,7 +156,15 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
 			guard let heart = hearts.last else { return }
 			heart.removeFromParent()
 			hearts.removeLast()
+			if hearts.isEmpty {
+				gameOver()
+			}
 		}
+	}
+	
+	func gameOver() {
+		isPaused = true
+		timer?.invalidate()
 	}
 	
 }
